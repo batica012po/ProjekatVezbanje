@@ -1,0 +1,49 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "ime": "Milos",
+      "prezime": "Djokic",
+      "brojIndeksa": "123/2020",
+      "datumRodjenja": "08/05/1991",
+      "grad": "Beograd",
+      "ulica": "Marsala Tita 23"
+    },
+    {
+      "id": 2,
+      "ime": "Marko",
+      "prezime": "Djokic",
+      "brojIndeksa": "123/2020",
+      "datumRodjenja": "08/05/1991",
+      "grad": "Beograd",
+      "ulica": "Marsala Tita 23"
+    },
+    {
+      "id": 3,
+      "ime": "Pera",
+      "prezime": "Djokic",
+      "brojIndeksa": "123/2020",
+      "datumRodjenja": "08/05/1991",
+      "grad": "Beograd",
+      "ulica": "Marsala Tita 23"
+    },
+    {
+      "id": 4,
+      "ime": "Janko",
+      "prezime": "Djokic",
+      "brojIndeksa": "123/2020",
+      "datumRodjenja": "08/05/1991",
+      "grad": "Beograd",
+      "ulica": "Marsala Tita 23"
+    },
+    {
+      "ime": "Mile ",
+      "prezime": "Budza",
+      "brojIndeksa": "1234",
+      "datumRodjenja": "05/02/1000",
+      "ulica": "Licka 28",
+      "grad": "Požarevac",
+      "id": 5
+    }
+  ]
+}

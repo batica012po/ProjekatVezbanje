@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Student } from '../models/student.model';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({
@@ -9,14 +9,20 @@ import { HttpClient } from '@angular/common/http';
 export class StudentService {
 
   constructor(private httpClient:HttpClient) { }
-  
-  vratiStudenta(){
-    return this.httpClient.get<Student[]>('https://6009e7ab778d1a0017793292.mockapi.io/student')
-    
+
+  vratiSveStudente(){
+    return this.httpClient.get<Student[]>('http://localhost:3000/students')
+
+  }
+  dodajStudenta(student: Student){
+    return this.httpClient.post<Student>('http://localhost:3000/students', student)
   }
 
-  obrisiStudenta(id:string){
-    return this.httpClient.delete('https://6009e7ab778d1a0017793292.mockapi.io/student')
-    
+  obrisiStudenta(id:number){
+    return this.httpClient.delete<Student>(`http://localhost:3000/students/${id}`)
+
+  }
+  vratiStudentaPrekoId(id:number){
+    return this.httpClient.get<Student>(`http://localhost:3000/students/${id}`)
   }
 }

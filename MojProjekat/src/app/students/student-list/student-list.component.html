@@ -1,16 +1,13 @@
 <div class="container">
     <div class="m-5">
-
+      <button class="btn btn-success" (click)="dodajStudenta()">Dodaj studenta</button>
         <table class="table table hover">
             <thead>
                 <th>ID</th>
                 <th>Ime</th>
                 <th>Prezime</th>
                 <th>BrojIndeksa</th>
-                <th>DatumRodjenja</th>
-                <th>Ulica</th>
-                <th>Grad</th>
-                <th>Delete</th>
+                <th>Options</th>
             </thead>
 
             <tbody>
@@ -19,12 +16,11 @@
                     <td>{{student.ime}}</td>
                     <td>{{student.prezime}}</td>
                     <td>{{student.brojIndeksa}}</td>
-                    <td>{{student.datumRodjenja}}</td>
-                    <td>{{student.ulica}}</td>
-                    <td>{{student.grad}}</td>
+
 
                     <td>
-                        <button class="btn btn-danger" (click)="potvrdaBrisanja(student.id, i)">Delete</button>
+                        <button class="btn btn-danger" (click)="potvrdaBrisanja(student.id)">Delete</button>
+                        <button class="btn btn-warning" (click)="prikaziDetalje(student.id)">Detalji</button>
                     </td>
                 </tr>
             </tbody>
