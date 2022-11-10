@@ -11,6 +11,7 @@ import { StudentService } from 'src/app/servisi/student.service';
 export class StudentDetailsComponent implements OnInit {
   student? : Student;
   id! : number;
+ 
 
   constructor(private activeRoute: ActivatedRoute, private studentService: StudentService) { }
 
@@ -22,5 +23,7 @@ export class StudentDetailsComponent implements OnInit {
     this.id = Number(this.activeRoute.snapshot.paramMap.get('id'));
     this.studentService.vratiStudentaPrekoId(this.id).subscribe(result => this.student = result)
   }
+
+
 
 }

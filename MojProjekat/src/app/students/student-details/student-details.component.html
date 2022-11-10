@@ -1,5 +1,41 @@
-<p>student-details works!</p>
-<h3>{{student?.ime}}</h3>
+<h3 class=" text-black text-center"><i>Detalji studenta: {{student?.ime}} {{student?.prezime}}</i></h3>
+
+<div class="d-flex d-flex justify-content-center p-3">
+  <table class="table table-bordered">
+    <tr>
+      <th>Ime:</th>
+      <td>{{student?.ime}}</td>
+    </tr>
+    <tr>
+      <th>Prezime:</th>
+      <td>{{student?.prezime}}</td>
+    </tr>
+    <tr>
+      <th>Broj Indeksa:</th>
+      <td>{{student?.brojIndeksa}}</td>
+    </tr>
+    <tr>
+      <th>Datum Rodjenja:</th>
+      <td>{{student?.datumRodjenja}}</td>
+    </tr>
+    <tr>
+      <th>Ulica:</th>
+      <td>{{student?.ulica}}</td>
+    </tr>
+    <tr>
+      <th>Grad:</th>
+      <td>{{student?.grad}}</td>
+    </tr>
+
+
+  </table>
+
+</div>
+
+<div class="m-3">
+  <button type="button" class="btn btn-primary" routerLink="/students">Nazad</button>
+</div>
+
 
 
 <!-- <div *ngIf="patient">
