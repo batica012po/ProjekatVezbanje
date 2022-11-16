@@ -1,6 +1,14 @@
 <div class="container">
     <div class="m-5">
-      <button class="btn btn-success" (click)="dodajStudenta()">Dodaj studenta</button>
+      <button class="btn btn-success" (click)="dodajStudenta()">Dodaj studenta</button> &nbsp; &nbsp; <i>Search...  </i>
+      <input
+          type="text"
+          [(ngModel)]="text"
+          class="searchText"
+          placeholder="Pretrazite studenta..."
+          size="30"
+          /> 
+      
         <table class="table table hover">
             <thead>
                 <th>ID</th>
@@ -11,7 +19,7 @@
             </thead>
 
             <tbody>
-                <tr *ngFor="let student of students; let i = index">
+                <tr *ngFor="let student of students | filter: text ; let i = index ">
                     <td>{{student.id}}</td>
                     <td>{{student.ime}}</td>
                     <td>{{student.prezime}}</td>

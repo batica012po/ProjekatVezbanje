@@ -9,6 +9,10 @@ import { StudentService } from 'src/app/servisi/student.service';
   styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent implements OnInit {
+  
+  searchText = '';
+  
+  text = ' ';
 
   students: Student[]=[];
 

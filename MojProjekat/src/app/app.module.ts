@@ -7,19 +7,23 @@ import { StudentListComponent } from './students/student-list/student-list.compo
 import { AddStudentComponent } from './students/add-student/add-student.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StudentDetailsComponent } from './students/student-details/student-details.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     StudentListComponent,
     AddStudentComponent,
     StudentDetailsComponent
+    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2SearchPipeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
