@@ -1,38 +1,42 @@
 <div class="container">
-    <div class="m-5">
-      <button class="btn btn-success" (click)="dodajStudenta()">Dodaj studenta</button> &nbsp; &nbsp; <i>Search...  </i>
-      <input
-          type="text"
-          [(ngModel)]="text"
-          class="searchText"
-          placeholder="Pretrazite studenta..."
-          size="30"
-          /> 
-      
-        <table class="table table hover">
-            <thead>
-                <th>ID</th>
-                <th>Ime</th>
-                <th>Prezime</th>
-                <th>BrojIndeksa</th>
-                <th>Options</th>
-            </thead>
+  <div class="m-5">
+    <button class="btn btn-success" (click)="dodajStudenta()">Dodaj studenta</button> &nbsp; &nbsp;
+    <table class="table table hover">
+      <thead>
+        <th>ID</th>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>BrojIndeksa</th>
+        <th>Options</th>
+      </thead>
 
-            <tbody>
-                <tr *ngFor="let student of students | filter: text ; let i = index ">
-                    <td>{{student.id}}</td>
-                    <td>{{student.ime}}</td>
-                    <td>{{student.prezime}}</td>
-                    <td>{{student.brojIndeksa}}</td>
+      <tbody>
+        <tr [formGroup]="filterForm">
+          <td></td>
+          <td><input type="text" class="form-control" placeholder="Pretrazi po imenu..." formControlName="ime" /></td>
+          <td><input type="text" class="form-control" placeholder="Pretrazi po prezimenu..."
+              formControlName="prezime" /></td>
+          <td><input type="text" class="form-control" placeholder="Pretrazi po broju indeksa..."
+              formControlName="brIndeksa" /></td>
+          <td>
+            <button class="btn btn-outline-success" (click)="filtriraj()">Search</button>&nbsp;&nbsp;
+            <button class="btn btn-outline-danger" (click)="resetujFiltere()">Reset</button>
+          </td>
+        </tr>
+        <tr *ngFor="let student of students">
+          <td>{{student.id}}</td>
+          <td>{{student.ime}}</td>
+          <td>{{student.prezime}}</td>
+          <td>{{student.brojIndeksa}}</td>
 
 
-                    <td>
-                        <button class="btn btn-danger" (click)="potvrdaBrisanja(student.id)">Delete</button> &nbsp;
-                        <button class="btn btn-warning" (click)="prikaziDetalje(student.id)">Detalji</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+          <td>
+            <button class="btn btn-danger" (click)="potvrdaBrisanja(student.id)">Delete</button> &nbsp;
+            <button class="btn btn-warning" (click)="prikaziDetalje(student.id)">Detalji</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 </div>

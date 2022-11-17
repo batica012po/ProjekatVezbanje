@@ -1,11 +1,11 @@
-<h3 class="bg-success text-white text-center">Novi student</h3>
+<h3 class="text-center">Novi student</h3>
 <div class="d-flex d-flex justify-content-center p-3">
   <div *ngIf="studentForm">
     <form [formGroup]="studentForm">
       <div class="d-flex flex-direction-row justify-content-around">
         <div class="d-flex flex-column col-lg-7 col-md-8 m-3 p-3">
 
-          <div class="d-flex flex-column mt-2">
+          <div class="d-flex flex-column">
             <label for="name">Ime</label>
             <input type="text" id="name" class="form-control" formControlName="ime"  />
           </div>

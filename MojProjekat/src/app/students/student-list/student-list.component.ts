@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Student } from 'src/app/models/student.model';
 import { StudentService } from 'src/app/servisi/student.service';
@@ -9,17 +10,37 @@ import { StudentService } from 'src/app/servisi/student.service';
   styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent implements OnInit {
-  
-  searchText = '';
-  
-  text = ' ';
-
   students: Student[]=[];
+  filterForm!: FormGroup;
+  ime?:string = "";
+  prezime?: string = "";
+  brIndeksa?:string = "";
 
-  constructor(private studentService:StudentService,private router:Router) { }
+  constructor(private studentService:StudentService,private router:Router, private formBuilder:FormBuilder) { }
 
   ngOnInit(): void {
+    this.createFilterForm();
     this.studentService.vratiSveStudente().subscribe(students=>{this.students=students; console.log (this.students)})
+  }
+  createFilterForm(){
+    this.filterForm = this.formBuilder.group({
+      ime:[this.ime],
+      prezime: [this.prezime],
+      brIndeksa:[this.brIndeksa],
+    });
+  }
+
+  filtriraj(){
+    const filteri = this.filterForm.getRawValue();
+    this.studentService.filtrirajStudente(filteri.ime, filteri.prezime, filteri.brIndeksa)
+      .subscribe(students=>{this.students=students; console.log (this.students)})
+  }
+
+  resetujFiltere(){
+    this.filterForm.controls['prezime'].setValue('');
+    this.filterForm.controls['ime'].setValue('');
+    this.filterForm.controls['brIndeksa'].setValue('');
+    this.filtriraj();
   }
 
   potvrdaBrisanja(id:number){
@@ -38,7 +59,4 @@ export class StudentListComponent implements OnInit {
   prikaziDetalje(id: number){
     this.router.navigate(['/student-details/'+id])
   }
-
-  
-
 }

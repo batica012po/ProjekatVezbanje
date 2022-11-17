@@ -25,4 +25,8 @@ export class StudentService {
   vratiStudentaPrekoId(id:number){
     return this.httpClient.get<Student>(`http://localhost:3000/students/${id}`)
   }
+
+  filtrirajStudente(ime: string, prezime: string, brIndeksa: string){
+    return this.httpClient.get<Student[]>(`http://localhost:3000/students?ime_like=${ime}&prezime_like=${prezime}&brojIndeksa_like=${brIndeksa}`)
+  }
 }
