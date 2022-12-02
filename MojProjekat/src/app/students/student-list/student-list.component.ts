@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { take } from 'rxjs';
 import { Student } from 'src/app/models/student.model';
 import { StudentService } from 'src/app/servisi/student.service';
 
@@ -32,20 +33,21 @@ export class StudentListComponent implements OnInit {
 
   filtriraj(){
     const filteri = this.filterForm.getRawValue();
-    this.studentService.filtrirajStudente(filteri.ime, filteri.prezime, filteri.brIndeksa)
-      .subscribe(students=>{this.students=students; console.log (this.students)})
+    this.studentService.filtrirajStudente(filteri.ime, filteri.prezime, filteri.brIndeksa).pipe(take(1)).
+      subscribe(result=>{this.students=result})
   }
 
   resetujFiltere(){
     this.filterForm.controls['prezime'].setValue('');
     this.filterForm.controls['ime'].setValue('');
     this.filterForm.controls['brIndeksa'].setValue('');
+
     this.filtriraj();
   }
 
   potvrdaBrisanja(id:number){
     if(confirm('Da li ste sigurni?')){
-      this.studentService.obrisiStudenta(id).subscribe({
+      this.studentService.obrisiStudenta(id).pipe(take(1)).subscribe({
         next: student => {
           this.studentService.vratiSveStudente().subscribe(students=>{this.students=students; console.log (this.students)});
         }});
