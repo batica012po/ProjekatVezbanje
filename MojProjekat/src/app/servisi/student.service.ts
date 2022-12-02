@@ -31,6 +31,10 @@ export class StudentService {
   }
 
   getStudent(id:number){
-    return this.httpClient.get<Student>(`http://localhost:3000/students/${id}`);
+      return this.httpClient.get<Student>(`http://localhost:3000/students/${id}`);
+  }
+
+  updateStudent(student:Student){
+    return this.httpClient.put<Student>('http://localhost:3000/students', student)
   }
 }
