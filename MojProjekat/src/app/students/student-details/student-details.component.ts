@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Student } from 'src/app/models/student.model';
 import { StudentService } from 'src/app/servisi/student.service';
 
@@ -11,9 +11,10 @@ import { StudentService } from 'src/app/servisi/student.service';
 export class StudentDetailsComponent implements OnInit {
   student? : Student;
   id! : number;
+  
  
 
-  constructor(private activeRoute: ActivatedRoute, private studentService: StudentService) { }
+  constructor(private router: Router,private activeRoute: ActivatedRoute, private studentService: StudentService) { }
 
   ngOnInit(): void {
     this.vratiStudenta();
@@ -24,6 +25,9 @@ export class StudentDetailsComponent implements OnInit {
     this.studentService.vratiStudentaPrekoId(this.id).subscribe(result => this.student = result)
   }
 
+  updateStudent(id:number){
+    this.router.navigate(['/app-edit-student/'+id]);
+  }
 
 
 }

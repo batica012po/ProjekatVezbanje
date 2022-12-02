@@ -36,6 +36,6 @@ export class AddStudentComponent implements OnInit {
       next: student => {
         this.router.navigate(['/students'])
       }});
-    console.log("implementirati metodu");
+    
   }
 }
