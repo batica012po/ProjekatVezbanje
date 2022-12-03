@@ -9,15 +9,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StudentDetailsComponent } from './students/student-details/student-details.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
-import { EditStudentComponent } from './edit-student/edit-student.component';
+import { EditStudentComponent } from './students/edit-student/edit-student.component';
+import { HomePageComponent } from './home/home-page/home-page.component';
 @NgModule({
   declarations: [
     AppComponent,
     StudentListComponent,
     AddStudentComponent,
     StudentDetailsComponent,
-    EditStudentComponent
-    
+    EditStudentComponent,
+    HomePageComponent
+
   ],
   imports: [
     BrowserModule,

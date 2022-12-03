@@ -1,13 +1,13 @@
 {
   "students": [
     {
-      "id": 1,
       "ime": "Milos",
       "prezime": "Milosevic",
       "brojIndeksa": "123/2022",
       "datumRodjenja": "08/03/1999",
+      "ulica": "Nemanjina 1",
       "grad": "Beograd",
-      "ulica": "Nemanjina 1"
+      "id": 1
     },
     {
       "id": 2,
@@ -41,8 +41,8 @@
       "prezime": "Boskovic",
       "brojIndeksa": "1i1/0029/19",
       "datumRodjenja": "23/07/2000",
-      "ulica": "Nemanjina 1",
-      "grad": "Beograd",
+      "ulica": "Nemanjina 12",
+      "grad": "Pozarevac",
       "id": 5
     }
   ]

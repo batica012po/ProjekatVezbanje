@@ -35,6 +35,6 @@ export class StudentService {
   }
 
   updateStudent(student:Student){
-    return this.httpClient.put<Student>('http://localhost:3000/students', student)
+    return this.httpClient.put<Student>(`http://localhost:3000/students/${student.id}`, student)
   }
 }

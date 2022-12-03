@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Student } from '../models/student.model';
-import { StudentService } from '../servisi/student.service';
+import { Student } from '../../models/student.model';
+import { StudentService } from '../../servisi/student.service';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { Subscription, take } from 'rxjs';

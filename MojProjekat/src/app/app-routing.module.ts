@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EditStudentComponent } from './edit-student/edit-student.component';
+import { EditStudentComponent } from './students/edit-student/edit-student.component';
 import { AddStudentComponent } from './students/add-student/add-student.component';
 import { StudentDetailsComponent } from './students/student-details/student-details.component';
 import { StudentListComponent } from './students/student-list/student-list.component';
+import { HomePageComponent } from './home/home-page/home-page.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,10 @@ const routes: Routes = [
     path: 'app-edit-student/:id', component: EditStudentComponent
   },
   {
-    path:'', redirectTo: 'students', pathMatch: 'full'
+    path: 'home', component: HomePageComponent
+  },
+  {
+    path:'', redirectTo: 'home', pathMatch: 'full'
   }
 ];
 
