@@ -1,0 +1,42 @@
+<h3 class=" text-black text-center"><i>Detalji profesora: {{profesor?.ime}} {{profesor?.prezime}}</i></h3>
+
+<div class="d-flex d-flex justify-content-center p-3">
+  <table class="table table-bordered">
+    <tr>
+      <th>Ime:</th>
+      <td>{{profesor?.ime}}</td>
+    </tr>
+    <tr>
+      <th>Prezime:</th>
+      <td>{{profesor?.prezime}}</td>
+    </tr>
+    <tr>
+      <th>E-mail:</th>
+      <td>{{profesor?.email}}</td>
+    </tr>
+    <tr>
+      <th>Datum Rodjenja:</th>
+      <td>{{profesor?.datumRodjenja}}</td>
+    </tr>
+    <tr>
+      <th>Ulica:</th>
+      <td>{{profesor?.ulica}}</td>
+    </tr>
+    <tr>
+      <th>Grad:</th>
+      <td>{{profesor?.grad}}</td>
+    </tr>
+
+
+  </table>
+
+</div>
+
+<div class="m-3">
+  <button type="button" class="btn btn-primary" style="margin-right: 690px;" routerLink="/profesori">Nazad</button>
+
+  <button type="button" class="btn btn-danger" (click)="updateProfesor(id)" >Izmeni podatke</button>
+</div>
+
+
+

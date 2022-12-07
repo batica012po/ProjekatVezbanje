@@ -19,7 +19,7 @@ export class EditStudentComponent implements OnInit {
   subscriptions?: Subscription = new Subscription();
   studentForm?: FormGroup
 
-  constructor(private router: Router, private httpClient: HttpClient, private activeRoute: ActivatedRoute, private StudentService: StudentService, private formBuilder: FormBuilder) { }
+  constructor(private router: Router, private httpClient: HttpClient, private activeRoute: ActivatedRoute, private studentService: StudentService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.subscriptions?.add(this.activeRoute.params.subscribe(params => {
@@ -33,7 +33,7 @@ export class EditStudentComponent implements OnInit {
   }
 
   loadData(id: number) {
-    this.StudentService.getStudent(id).pipe(take(1)).subscribe(student => {
+    this.studentService.getStudent(id).pipe(take(1)).subscribe(student => {
       this.student = student
       this.editStudentForm()
     })
@@ -53,7 +53,7 @@ export class EditStudentComponent implements OnInit {
   updateStudent() {
     const student = this.studentForm?.getRawValue();
     student.id = this.student.id;
-    this.StudentService.updateStudent(student).subscribe({
+    this.studentService.updateStudent(student).subscribe({
       next: student => {
         this.router.navigate(['/students'])
       }

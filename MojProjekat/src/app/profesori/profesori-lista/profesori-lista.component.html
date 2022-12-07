@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="m-5">
+        <button class="btn btn-success" (click)="dodajProfesora()" >Dodaj profesora</button>
+        <table class="table table hover">
+            <thead>
+                <th>ID</th>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>E-mail</th>
+                <th>Options</th>
+            </thead> 
+
+            <tbody>
+                <tr [formGroup]="filterForm">
+                    <td></td>
+                    <td><input type="text" class="form-control" placeholder="Pretrazi po imenu..." formControlName="ime"></td>
+                    <td><input type="text" class="form-control" placeholder="Pretrazi po prezimenu..." formControlName="prezime"></td>
+                    <td><input type="text" class="form-control" placeholder="Pretrazi po E-mail-u..." formControlName="email"></td>
+                
+                    <td>
+                        <button class="btn btn-outline-success"(click)="filtriraj()">Pretrazi</button>&nbsp;&nbsp;
+                        <button class="btn btn-outline-danger" (click)="resetujFiltere()">Resetuj</button>
+                    </td>
+                </tr>
+
+
+                <tr *ngFor="let profesori of profesori">
+                    <td>{{profesori.id}}</td>
+                    <td>{{profesori.ime}}</td>
+                    <td>{{profesori.prezime}}</td>
+                    <td>{{profesori.email}}</td>
+                    
+                    <td>
+                        <button class="btn btn-danger" (click)="potvrdaBrisanja(profesori.id)">Izbrisi</button> &nbsp;    
+                        <button class="btn btn-warning" (click)="prikaziDetalje(profesori.id)">Detalji</button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

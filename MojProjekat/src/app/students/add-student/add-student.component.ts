@@ -27,7 +27,7 @@ export class AddStudentComponent implements OnInit, OnDestroy {
   createStudentForm(){
     this.studentForm = this.formBuilder.group({
       ime:[this.student?.ime,[Validators.required, Validators.minLength(2)]],
-      prezime: [this.student?.prezime,[Validators.required]],
+      prezime: [this.student?.prezime,[Validators.required, Validators.minLength(2)]],
       brojIndeksa:[this.student?.brojIndeksa,[Validators.required]],
       datumRodjenja:[this.student?.datumRodjenja,[Validators.required]],
       ulica:[this.student?.ulica,[Validators.required]],

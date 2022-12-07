@@ -11,6 +11,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
 import { EditStudentComponent } from './students/edit-student/edit-student.component';
 import { HomePageComponent } from './home/home-page/home-page.component';
+import { ProfesoriListaComponent } from './profesori/profesori-lista/profesori-lista.component';
+import { ProfesoriDetailsComponent } from './profesori/profesori-details/profesori-details.component';
+import { AddProfesorComponent } from './profesori/add-profesor/add-profesor.component';
+import { EditProfesorComponent } from './profesori/edit-profesor/edit-profesor.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +22,11 @@ import { HomePageComponent } from './home/home-page/home-page.component';
     AddStudentComponent,
     StudentDetailsComponent,
     EditStudentComponent,
-    HomePageComponent
+    HomePageComponent,
+    ProfesoriListaComponent,
+    ProfesoriDetailsComponent,
+    AddProfesorComponent,
+    EditProfesorComponent
 
   ],
   imports: [
